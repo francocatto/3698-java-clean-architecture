@@ -1,7 +1,7 @@
-package br.com.alura.codechella.controller;
+package br.com.alura.codechella.deprecated.controller;
 
-import br.com.alura.codechella.model.Usuario;
-import br.com.alura.codechella.service.UsuarioService;
+import br.com.alura.codechella.deprecated.model.Usuario;
+import br.com.alura.codechella.deprecated.service.UsuarioService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
