@@ -5,7 +5,7 @@ import br.com.alura.codechella.domain.vo.Endereco;
 import java.time.LocalDate;
 import java.time.Period;
 
-public class Usuario {
+public final class Usuario {
     private final String cpf;
     private final String nome;
     private final LocalDate nascimento;

@@ -12,14 +12,14 @@ public class UsuarioTest {
     @DisplayName("Não deve cadastrar usuário com CPF com formato inválido")
     public void naoDeveCadastrarUsuarioComCpfNoFormatoInvalido() {
         Assertions.assertThrows(IllegalArgumentException.class,
-                () -> new Usuario.UsuarioBuilder().cpf("12345678999").nome("Jacque").nascimento(LocalDate.parse("1990-09-08")).email("email@email.com").build());
+                () -> Usuario.builder().cpf("12345678999").nome("Jacque").nascimento(LocalDate.parse("1990-09-08")).email("email@email.com").build());
     }
 
     @Test
     @DisplayName("Não deve cadastrar usuário com formatação do email inválida")
     public void naoDeveCadastrarUsuarioComEmailNoFormatoInvalido() {
         Assertions.assertThrows(IllegalArgumentException.class,
-                () -> new Usuario.UsuarioBuilder().cpf("12345678999").nome("Jacque").nascimento(LocalDate.parse("1990-09-08")).email("teste@testecom").build(), "CPF formato inválido");
+                () -> Usuario.builder().cpf("12345678999").nome("Jacque").nascimento(LocalDate.parse("1990-09-08")).email("teste@testecom").build(), "CPF formato inválido");
     }
 
     @Test
