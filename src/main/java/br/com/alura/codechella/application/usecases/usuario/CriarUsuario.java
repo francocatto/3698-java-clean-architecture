@@ -1,4 +1,4 @@
-package br.com.alura.codechella.application.usecases;
+package br.com.alura.codechella.application.usecases.usuario;
 
 import br.com.alura.codechella.application.adapters.UsuarioRepository;
 import br.com.alura.codechella.domain.entities.Usuario;

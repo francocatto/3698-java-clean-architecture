@@ -44,6 +44,8 @@ public final class Usuario {
         return email;
     }
 
+    public Endereco getEndereco() { return endereco; };
+
     public static UsuarioBuilder builder(){
         return new UsuarioBuilder();
     }

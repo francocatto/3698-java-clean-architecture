@@ -1,9 +1,9 @@
-package br.com.alura.codechella.infrastructure.gateways;
+package br.com.alura.codechella.infrastructure.adapters;
 
 import br.com.alura.codechella.domain.entities.Usuario;
 import br.com.alura.codechella.infrastructure.persistence.UsuarioEntity;
 
-public class UsuarioEntityMapper {
+public class UsuarioMapper {
 
     public UsuarioEntity toEntity(Usuario usuario){
         return new UsuarioEntity(usuario.getCpf(), usuario.getNome(), usuario.getNascimento(), usuario.getEmail());

@@ -1,4 +1,8 @@
 package br.com.alura.codechella.infrastructure.controllers;
 
-public record UsuarioDTO() {
+import br.com.alura.codechella.domain.vo.Endereco;
+
+import java.time.LocalDate;
+
+public record UsuarioDTO(String cpf, String nome, LocalDate nascimento, String email, Endereco endereco) {
 }
