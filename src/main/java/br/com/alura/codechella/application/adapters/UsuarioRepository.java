@@ -1,4 +1,4 @@
-package br.com.alura.codechella.application.gateways;
+package br.com.alura.codechella.application.adapters;
 
 import br.com.alura.codechella.domain.entities.Usuario;
 
