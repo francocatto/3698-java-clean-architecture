@@ -11,7 +11,7 @@ public class ExcluirUsuario {
         this.usuarioRepository = usuarioRepository;
     }
 
-    public void excluir(Long id) {
-        this.usuarioRepository.excluir(id);
+    public void excluir(String cpf) {
+        this.usuarioRepository.excluir(cpf);
     }
 }

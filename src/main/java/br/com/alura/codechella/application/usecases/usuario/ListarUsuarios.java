@@ -13,7 +13,6 @@ public class ListarUsuarios {
         this.repositorioDeUsuario = repositorioDeUsuario;
     }
 
-
     public List<Usuario> listarTodos() {
         return this.repositorioDeUsuario.listar();
     }

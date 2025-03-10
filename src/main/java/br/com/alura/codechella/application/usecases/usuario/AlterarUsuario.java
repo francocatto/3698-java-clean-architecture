@@ -13,7 +13,6 @@ public class AlterarUsuario {
 
     public Usuario alterar(Usuario usuario) {
         return this.usuarioRepository.alterar(usuario);
-
     }
 
 }

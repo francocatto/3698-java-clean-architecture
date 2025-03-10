@@ -10,7 +10,7 @@ public interface UsuarioRepository {
 
     List<Usuario> listar();
 
-    void excluir(Long id);
+    void excluir(String cpf);
 
     Usuario alterar(Usuario usuario);
 }
