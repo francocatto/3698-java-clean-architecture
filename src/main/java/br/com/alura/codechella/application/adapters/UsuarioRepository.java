@@ -12,5 +12,5 @@ public interface UsuarioRepository {
 
     void excluir(String cpf);
 
-    Usuario alterar(Usuario usuario);
+    Usuario alterar(String cpf, Usuario usuario);
 }

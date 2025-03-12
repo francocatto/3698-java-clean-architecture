@@ -1,5 +1,6 @@
 package br.com.alura.codechella.application.configuration;
 
+import br.com.alura.codechella.application.usecases.usuario.AlterarUsuario;
 import br.com.alura.codechella.application.usecases.usuario.CriarUsuario;
 import br.com.alura.codechella.application.usecases.usuario.ExcluirUsuario;
 import br.com.alura.codechella.application.usecases.usuario.ListarUsuarios;
@@ -36,4 +37,7 @@ public class UsuarioConfig {
     ExcluirUsuario excluirUsuario(UsuarioRepository usuarioRepository) {
         return new ExcluirUsuario(usuarioRepository);
     }
+
+    @Bean
+    AlterarUsuario alterarUsuario(UsuarioRepository usuarioRepository) { return new AlterarUsuario(usuarioRepository); }
 }

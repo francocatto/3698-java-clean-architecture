@@ -1,10 +1,6 @@
 package br.com.alura.codechella.infrastructure.persistence;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,11 +21,14 @@ public class UsuarioEntity {
     private String nome;
     private LocalDate nascimento;
     private String email;
+    @Embedded
+    private Endereco endereco;
 
-    public UsuarioEntity(String cpf, String nome, LocalDate nascimento, String email) {
+    public UsuarioEntity(String cpf, String nome, LocalDate nascimento, String email, Endereco endereco) {
         this.cpf = cpf;
         this.nome = nome;
         this.nascimento = nascimento;
         this.email = email;
+        this.endereco = endereco;
     }
 }

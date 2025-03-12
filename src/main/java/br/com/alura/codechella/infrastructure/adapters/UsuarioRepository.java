@@ -30,13 +30,20 @@ public class UsuarioRepository implements br.com.alura.codechella.application.ad
     }
 
     @Override
-    public void excluir(Long id) {
-        this.usuarioRepository.deleteById(id);
+    public void excluir(String cpf) {
+        List<UsuarioEntity> listaDeUsuarios = this.usuarioRepository.findUsuarioEntityByCpf(cpf);
+        listaDeUsuarios.forEach(usuarioEntity -> usuarioRepository.delete(usuarioEntity));
     }
 
-    public Usuario alterar(Usuario usuario) {
-        UsuarioEntity usuarioEntity = mapper.toEntity(usuario);
-        return mapper.toDomain(usuarioRepository.save(usuarioEntity));
+    public Usuario alterar(String cpf, Usuario usuario) {
+        List<UsuarioEntity> listaDeUsuarios = this.usuarioRepository.findUsuarioEntityByCpf(cpf);
+        if (!listaDeUsuarios.isEmpty()) {
+            UsuarioEntity usuarioAtual = listaDeUsuarios.get(0);
+            UsuarioEntity usuarioAtualizado = mapper.toEntity(usuario);
+            usuarioAtualizado.setId(usuarioAtual.getId());
+            return mapper.toDomain(usuarioRepository.save(usuarioAtualizado));
+        }
+        return null;
     }
 
 

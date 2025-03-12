@@ -11,8 +11,8 @@ public class AlterarUsuario {
         this.usuarioRepository = usuarioRepository;
     }
 
-    public Usuario alterar(Usuario usuario) {
-        return this.usuarioRepository.alterar(usuario);
+    public Usuario alterar(String cpf, Usuario usuario) {
+        return this.usuarioRepository.alterar(cpf, usuario);
     }
 
 }
