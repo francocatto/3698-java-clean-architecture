@@ -1,26 +1,36 @@
 package br.com.alura.codechella.application.configuration;
 
+import br.com.alura.codechella.application.adapters.UsuarioRepository;
 import br.com.alura.codechella.application.usecases.usuario.AlterarUsuario;
 import br.com.alura.codechella.application.usecases.usuario.CriarUsuario;
 import br.com.alura.codechella.application.usecases.usuario.ExcluirUsuario;
 import br.com.alura.codechella.application.usecases.usuario.ListarUsuarios;
-import br.com.alura.codechella.infrastructure.adapters.UsuarioRepository;
+import br.com.alura.codechella.infrastructure.adapters.UsuarioRepositoryFile;
+import br.com.alura.codechella.infrastructure.adapters.UsuarioRepositoryJpa;
 import br.com.alura.codechella.infrastructure.adapters.UsuarioMapper;
-import br.com.alura.codechella.infrastructure.persistence.UsuarioRepositoryJPA;
+import br.com.alura.codechella.infrastructure.persistence.UsuarioFileRepository;
+import br.com.alura.codechella.infrastructure.persistence.UsuarioJpaRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/* TODO Parametrizar o tipo de repositório para rodar a aplicação
+ */
 @Configuration
 public class UsuarioConfig {
 
     @Bean
-    CriarUsuario criarUsuario(UsuarioRepository usuarioRepository){
-        return new CriarUsuario(usuarioRepository);
+    UsuarioRepositoryJpa criarRepositorioDeUsuarioJPA(UsuarioJpaRepository usuarioJpaRepository, UsuarioMapper usuarioEntityMapper){
+        return new UsuarioRepositoryJpa(usuarioJpaRepository, usuarioEntityMapper);
     }
 
     @Bean
-    UsuarioRepository criarRepositorioDeUsuario(UsuarioRepositoryJPA usuarioRepositoryJPA, UsuarioMapper usuarioEntityMapper){
-        return new UsuarioRepository(usuarioRepositoryJPA, usuarioEntityMapper);
+    UsuarioRepositoryFile criarRepositorioDeUsuarioFile(UsuarioFileRepository usuarioFileRepository, UsuarioMapper usuarioEntityMapper){
+        return new UsuarioRepositoryFile(usuarioFileRepository, usuarioEntityMapper);
+    }
+
+    @Bean
+    UsuarioFileRepository usuarioFileRepository() {
+        return new UsuarioFileRepository();
     }
 
     @Bean
@@ -29,15 +39,22 @@ public class UsuarioConfig {
     }
 
     @Bean
-    ListarUsuarios listarUsuarios(UsuarioRepository usuarioRepository){
+    CriarUsuario criarUsuario(UsuarioRepositoryFile usuarioRepository){
+        return new CriarUsuario(usuarioRepository);
+    }
+
+    @Bean
+    ListarUsuarios listarUsuarios(UsuarioRepositoryFile usuarioRepository){
         return new ListarUsuarios(usuarioRepository);
     }
 
     @Bean
-    ExcluirUsuario excluirUsuario(UsuarioRepository usuarioRepository) {
+    ExcluirUsuario excluirUsuario(UsuarioRepositoryFile usuarioRepository) {
         return new ExcluirUsuario(usuarioRepository);
     }
 
     @Bean
-    AlterarUsuario alterarUsuario(UsuarioRepository usuarioRepository) { return new AlterarUsuario(usuarioRepository); }
+    AlterarUsuario alterarUsuario(UsuarioRepositoryFile usuarioRepository) {
+        return new AlterarUsuario(usuarioRepository);
+    }
 }
