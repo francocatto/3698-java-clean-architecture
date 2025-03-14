@@ -1,13 +1,12 @@
-package br.com.alura.codechella.application.configuration;
+package br.com.alura.codechella.infrastructure.configuration;
 
-import br.com.alura.codechella.application.adapters.UsuarioRepository;
 import br.com.alura.codechella.application.usecases.usuario.AlterarUsuario;
 import br.com.alura.codechella.application.usecases.usuario.CriarUsuario;
 import br.com.alura.codechella.application.usecases.usuario.ExcluirUsuario;
 import br.com.alura.codechella.application.usecases.usuario.ListarUsuarios;
 import br.com.alura.codechella.infrastructure.adapters.UsuarioRepositoryFile;
 import br.com.alura.codechella.infrastructure.adapters.UsuarioRepositoryJpa;
-import br.com.alura.codechella.infrastructure.adapters.UsuarioMapper;
+import br.com.alura.codechella.infrastructure.persistence.UsuarioMapper;
 import br.com.alura.codechella.infrastructure.persistence.UsuarioFileRepository;
 import br.com.alura.codechella.infrastructure.persistence.UsuarioJpaRepository;
 import org.springframework.context.annotation.Bean;

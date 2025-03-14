@@ -4,6 +4,8 @@ import br.com.alura.codechella.application.adapters.UsuarioRepository;
 import br.com.alura.codechella.domain.entities.Usuario;
 import br.com.alura.codechella.infrastructure.persistence.UsuarioEntity;
 import br.com.alura.codechella.infrastructure.persistence.UsuarioJpaRepository;
+import br.com.alura.codechella.infrastructure.persistence.UsuarioMapper;
+
 import java.util.List;
 import java.util.stream.Collectors;
 

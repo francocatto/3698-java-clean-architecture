@@ -5,7 +5,7 @@ import br.com.alura.codechella.application.usecases.usuario.CriarUsuario;
 import br.com.alura.codechella.application.usecases.usuario.ExcluirUsuario;
 import br.com.alura.codechella.application.usecases.usuario.ListarUsuarios;
 import br.com.alura.codechella.domain.entities.Usuario;
-import br.com.alura.codechella.infrastructure.adapters.UsuarioMapper;
+import br.com.alura.codechella.infrastructure.persistence.UsuarioMapper;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;

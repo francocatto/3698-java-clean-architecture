@@ -1,8 +1,6 @@
-package br.com.alura.codechella.infrastructure.adapters;
+package br.com.alura.codechella.infrastructure.persistence;
 
 import br.com.alura.codechella.domain.entities.Usuario;
-import br.com.alura.codechella.infrastructure.persistence.Endereco;
-import br.com.alura.codechella.infrastructure.persistence.UsuarioEntity;
 
 public class UsuarioMapper {
 
